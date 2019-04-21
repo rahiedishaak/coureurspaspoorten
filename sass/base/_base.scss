@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px, for desktop
+
+    @media only screen and (max-width: 56.25em) {
+        font-size: 56.25%; // 1rem = 9px, for desktop
+    }
+
+    @media only screen and (max-width: 50em) {
+        font-size: 50%; // 1rem = 8px, for desktop
+    }
+
+    @media only screen and (max-width: 46em) {
+        font-size: 62.5%; // 1rem = 10px, for tablets
+    }
+
+    @media only screen and (max-width: 42em) {
+        font-size: 56.25%; // 1rem = 9px, for tablets
+    }
+
+    @media only screen and (max-width: 37em) {
+        font-size: 50%; // 1rem = 8px, for tablets
+    }
+
+    @media only screen and (max-width: 34em) {
+        font-size: 62.5%; // 1rem = 10px, for phones
+    }
+
+    @media only screen and (max-width: 30em) {
+        font-size: 56.25%; // 1rem = 9px, for phones
+    }
+
+    @media only screen and (max-width: 27em) {
+        font-size: 50%; // 1rem = 8px, for phones
+    }
+
+    @media only screen and (max-width: 24em) {
+        font-size: 43.75%; // 1rem = 7px, for phones
+    }
+
+    @media only screen and (max-width: 21em) {
+        font-size: 37.5%; // 1rem = 6px, for phones
+    }
+    
+    @media only screen and (max-width: 18em) {
+        font-size: 31.25%; // 1rem = 5px, for phones
+    }
+    
+    @media only screen and (max-width: 16em) {
+        font-size: 25%; // 1rem = 4px, for phones
+    }
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 3rem 0;
+    overflow-x: hidden;
+    background-image: linear-gradient(
+        to right,
+        rgba($color-black, .85),
+        rgba($color-black, .85)
+    ), url(../img/background-min.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

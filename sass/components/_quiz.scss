@@ -1,0 +1,233 @@
+.quiz {
+    padding: 2rem;
+    background-color: rgba($color-white, .6);
+    border: $border-of-box;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba($color-black, .95);
+
+    &__left {
+        padding: 0 .75rem;
+        width: 25%;
+        float: left;
+
+        @media only screen and (max-width: 46em) {
+            padding: 0;
+            width: 100%;
+            float: none;
+        }
+    }
+    
+    &__right {
+        padding: 0 .75rem;
+        width: 75%;
+        float: left;
+
+        @media only screen and (max-width: 46em) {
+            padding: 0;
+            width: 100%;
+            float: none;
+        }
+    }
+
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+
+    // Left side    
+    &__teams {
+        list-style-type: none;
+        font-size: 1.6rem;
+        color: $color-grey-dark-1;
+        letter-spacing: 1.2px;
+        text-align: right;
+
+        @media only screen and (max-width: 46em) {
+            text-align: left;
+        }
+        
+        @media only screen and (max-width: 34em) {
+            font-size: 1.8rem;
+        }
+
+        @media only screen and (max-width: 24em) {
+            font-size: 2.2rem;
+        }
+
+        @media only screen and (max-width: 18em) {
+            font-size: 2.75rem;
+        }
+    }
+
+    &__team {
+        margin: .5rem;
+
+        @media only screen and (max-width: 46em) {
+            margin: 0 0 1rem 0;
+        }
+    }
+
+    // Right side - answers
+    &__answers {
+        list-style-type: none;
+    }
+
+    &__answer {
+        border: $border-of-box;
+        border-radius: 5px;
+        background-color: rgba($color-black, .3);
+        margin: 1rem;
+        padding: 1.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: $color-grey-light-2;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all .3s;
+
+        @media only screen and (max-width: 46em) {
+            margin: 1rem 0;
+        }
+
+        @media only screen and (max-width: 21em) {
+            padding: 1rem;
+            font-size: 2.1rem;
+            letter-spacing: 1px;
+        }
+
+        @media only screen and (max-width: 16em) {
+            font-size: 3rem;
+            letter-spacing: .5px;
+        }
+
+        &:hover {
+            background-color: rgba($color-black, .7);
+
+            @media only screen and (hover: none) {
+                background-color: rgba($color-black, .3);
+            }
+        }
+    }
+
+    // Right side - panel
+    &__panel {
+        display: flex;
+        padding: 1rem;
+
+        @media only screen and (max-width: 46em) {
+            margin-top: 2rem;
+            padding: 0;
+        }
+    }
+
+    // Restart button
+    &__restart {
+        display: flex;
+        align-items: center;
+        padding: .5em 1em;
+        margin-right: auto;
+        border: $border-of-box;
+        border-radius: 5px;
+        outline: none;
+        background-color: $color-greenblue;
+        cursor: pointer;
+        color: $color-grey-light-2;
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-family: inherit;
+        letter-spacing: 1px;
+        transition: all .3s;
+
+        @media only screen and (max-width: 27em) {
+            font-size: 1.8rem;
+        }
+
+        @media only screen and (max-width: 16em) {
+            font-size: 2.5rem;
+            letter-spacing: .5px;
+        }
+
+        &:hover {
+            background-color: darken($color-greenblue, 15%);
+
+            @media only screen and (hover: none) {
+                background-color: $color-greenblue;
+            }
+        }
+
+        &:active {
+            transform: translateY(2px);
+
+            @media only screen and (hover: none) {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__restart-icon {
+        height: 2rem;
+        width: 2rem;
+        margin-right: .5rem;
+        fill: currentColor;
+    }
+
+    // Wrong, Correct scores
+    &__wrong,
+    &__correct {
+        display: flex;
+        align-items: center;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: $color-grey-dark-1;
+    }
+
+    &__wrong {
+        margin-right: 3rem;
+
+        @media only screen and (max-width: 46em) {
+            margin-right: 2.5rem;
+        }
+
+        @media only screen and (max-width: 34em) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__wrong-icon,
+    &__correct-icon {
+        width: 4rem;
+        height: 4rem;
+
+        @media only screen and (max-width: 21em) {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        @media only screen and (max-width: 16em) {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    &__wrong-icon {
+        fill: $color-red;
+        margin-right: .4rem;
+
+        @media only screen and (max-width: 46em) {
+            margin-right: .1rem;
+        }
+    }
+
+    &__correct-icon {
+        fill: $color-green;
+        margin-right: .8rem;
+
+        @media only screen and (max-width: 46em) {
+            margin-right: .4rem;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <!-- Google Analytics hier -->
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Formule 1-quiz met coureurspaspoorten waarbij de juiste coureur aan een lijstje van teams moet worden gekoppeld.">
+        <title>Formule 1-quiz, welke coureur reed voor deze teams? | Coureurspaspoorten.nl</title>
+        
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Favicon hier -->        
+    </head>
+    
+    <body>
+        <div class="finished">
+            <div class="finished__message">
+                <div class="finished__score u-margin-bottom-sm"></div>
+                <div class="finished__rating u-margin-bottom-sm"></div>
+                <button class="finished__again">Speel nog een keer!</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1 class="heading-primary u-margin-bottom-sm">Welke coureur reed voor deze teams?</h1>
+            <div class="quiz">
+                <div class="quiz__left">
+                    <ul class="quiz__teams"></ul>
+                </div>
+                <div class="quiz__right">
+                    <ul class="quiz__answers"></ul>
+                    <div class="quiz__panel">
+                        <button class="quiz__restart">
+                            <svg class="quiz__restart-icon">
+                                <use xlink:href="img/sprite.svg#icon-repeat">
+                            </svg> Herstart
+                        </button>
+                        <div class="quiz__wrong">
+                            <svg class="quiz__wrong-icon">
+                                <use xlink:href="img/sprite.svg#icon-close">
+                            </svg>
+                            <span class="quiz__wrong-count"></span>
+                        </div>
+                        <div class="quiz__correct">
+                            <svg class="quiz__correct-icon">
+                                <use xlink:href="img/sprite.svg#icon-check">
+                            </svg>
+                            <span class="quiz__correct-count"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Script to make external svg's visible in IE -->
+        <script src="vendors/js/svg4everybody.min.js"></script>
+        <script>svg4everybody()</script>
+
+        <!-- Script for quiz itself -->
+        <script src="js/bundle.js"></script>
+
+    </body>
+</html>

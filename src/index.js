@@ -53,12 +53,12 @@ const generateQuestion = () => {
 
 // Generate list of teams for question
 const generateTeamList = array => {
-    array.forEach(item => {
+    for(let i = 0; i < array.length; i++) {
         const li = document.createElement('li')
         li.classList.add('quiz__team')
-        li.textContent = item
+        li.textContent = array[i]
         teamsListEl.appendChild(li)
-    })
+    }
 }
 
 // Generate 4 possible answers
@@ -79,29 +79,29 @@ const generateAnswers = driver => {
 
 // Generate DOM elements for 4 possible answers
 const generateAnswersDOM = (array, driver) => {
-    array.forEach(item => {
+    for(let i = 0; i < array.length; i++) {
         const li = document.createElement('li')
         li.classList.add('quiz__answer')
-        li.textContent = item
+        li.textContent = array[i]
         answersListEl.appendChild(li)
-        
+
         li.addEventListener('click', function() {
-            if(item === driver) {
+            if(array[i] === driver) {
                 li.style.backgroundColor = '#009900'
                 correctCount++
             } else {
                 li.style.backgroundColor = '#ff0000'
                 wrongCount++
             }
-            
+
             updateCounters()     
             const answersLi = document.querySelectorAll('.quiz__answer')
-            answersLi.forEach(answerLi => {
-                answerLi.style.pointerEvents = 'none'
-                if(answerLi.textContent === driver) {
-                    answerLi.style.backgroundColor = '#009900'
+            for(let x = 0; x < answersLi.length; x++) {
+                answersLi[x].style.pointerEvents = 'none'
+                if(answersLi[x].textContent === driver) {
+                    answersLi[x].style.backgroundColor = '#009900'
                 }
-            })
+            }
 
             if(correctCount + wrongCount < 10) {
                 setTimeout(generateQuestion, 1250)
@@ -111,19 +111,17 @@ const generateAnswersDOM = (array, driver) => {
                     finishedPopup.style.visibility = 'visible'
 
                     finishedScore.textContent = `Score: ${correctCount} goed, ${wrongCount} fout`
-
                     if (correctCount >= 9) finishedRating.textContent = 'Klasse! De topteams zullen wel voor je in de rij staan!'
                     else if (correctCount >= 7) finishedRating.textContent = 'Goed gedaan! Je hoort zeker thuis in de Formule 1!'
                     else if (correctCount === 6) finishedRating.textContent = 'Voldoende! Maar pas op voor je stoeltje, want de Formule 1 is een competitieve wereld!'
                     else if (correctCount === 5) finishedRating.textContent = 'Oeps! Dit kan wel eens te weinig zijn om je stoeltje te behouden!'
                     else if (correctCount === 4) finishedRating.textContent = 'Hmm, was je wel klaar voor de Formule 1?'
                     else if (correctCount <= 3) finishedRating.textContent = 'Helaas! Dat is ver buiten de 107%-regel!'
-
                     finishedButton.addEventListener('click', startGame)
                 }, 1250)
             }
         })
-    })
+    }
 }
 
 // Start the game

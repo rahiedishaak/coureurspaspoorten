@@ -2,7 +2,7 @@
   "name": "coureurspaspoorten",
   "version": "1.0.0",
   "description": "Quiz waarbij de bezoeker een lijst van Formule 1-teams te zien krijgt. De opdracht is raden welke Formule 1-coureur bij deze lijst hoort.",
-  "main": "js/index.js",
+  "main": "js/bundle.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",

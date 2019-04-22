@@ -151,11 +151,11 @@ body {
     margin: 1rem;
     padding: 1.5rem;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     color: #ddd;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: all .3s; }
+    transition: all .35s; }
     @media only screen and (max-width: 46em) {
       .quiz__answer {
         margin: 1rem 0; } }
